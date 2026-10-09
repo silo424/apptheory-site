@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and title != site.name %}{{ title }} | {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="{% if layout == 'post.njk' %}article{% else %}website{% endif %}">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='%238774ff' text-anchor='middle'%3EAT%3C/text%3E%3C/svg%3E">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.name }} blog" href="/feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">App<span>Theory</span></a>
+      <nav aria-label="Main">
+        <ul>
+          {%- for item in site.nav %}
+          <li><a href="{{ item.url }}"{% if page.url == item.url or (item.url != '/' and page.url.startsWith(item.url) and not (item.url == '/apps/' and page.url.startsWith('/apps/fretninja'))) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; {{ "" | year }} AppTheory.</p>
+      <p class="footer-links">
+        <a href="/blog/">Blog</a>
+        <a href="/apps/">Apps</a>
+        <a href="mailto:{{ site.email }}">Contact</a>
+        <a href="/feed.xml">RSS</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

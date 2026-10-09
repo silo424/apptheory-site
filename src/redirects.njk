@@ -1,0 +1,21 @@
+---js
+{
+  pagination: {
+    data: "redirects",
+    size: 1,
+    alias: "r"
+  },
+  redirects: [
+    { from: "/fretninja/", to: "/apps/fretninja/" },
+    { from: "/fretninja-privacy/", to: "/apps/fretninja/privacy/" },
+    { from: "/fretninja-review/", to: "/apps/fretninja/review/" },
+    { from: "/ghostmap/", to: "/apps/fretninja/" },
+    { from: "/ghostmap-privacy/", to: "/apps/fretninja/privacy/" },
+    { from: "/ghostmap-review/", to: "/apps/fretninja/review/" }
+  ],
+  permalink: (data) => data.r.from,
+  eleventyComputed: { redirectTo: (data) => data.r.to },
+  eleventyExcludeFromCollections: true
+}
+---
+{% include "redirect.njk" %}

@@ -1,0 +1,12 @@
+{
+  "name": "AppTheory",
+  "url": "https://www.apptheory.ai",
+  "description": "An independent iOS studio. Small apps, built carefully. And notes from the build.",
+  "email": "silo424@icloud.com",
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "Blog", "url": "/blog/" },
+    { "label": "Apps", "url": "/apps/" },
+    { "label": "FretNinja", "url": "/apps/fretninja/" }
+  ]
+}

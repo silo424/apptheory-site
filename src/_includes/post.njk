@@ -1,0 +1,18 @@
+---
+layout: base.njk
+---
+<article class="wrap narrow post">
+  <p class="eyebrow"><a href="/blog/">Blog</a></p>
+  <h1>{{ title }}</h1>
+  <p class="meta"><time datetime="{{ page.date | isoDate }}">{{ page.date | longDate }}</time> · {{ content | readingTime }} min read</p>
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+
+  {%- set prev = collections.posts | getPreviousCollectionItem(page) %}
+  {%- set next = collections.posts | getNextCollectionItem(page) %}
+  <nav class="post-nav" aria-label="More posts">
+    {% if prev %}<a href="{{ prev.url }}"><span>Newer</span>{{ prev.data.title }}</a>{% else %}<span></span>{% endif %}
+    {% if next %}<a class="older" href="{{ next.url }}"><span>Older</span>{{ next.data.title }}</a>{% endif %}
+  </nav>
+</article>

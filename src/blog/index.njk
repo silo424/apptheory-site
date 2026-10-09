@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Blog
+description: Notes from building small iOS apps, plus news on Apple and AI.
+---
+<section class="wrap section">
+  <p class="eyebrow">Blog</p>
+  <h1 class="page-title">Notes from the build</h1>
+  <ul class="post-list">
+    {%- for post in collections.posts %}
+    <li>
+      <a href="{{ post.url }}">
+        <h2>{{ post.data.title }}</h2>
+        <p class="muted">{{ post.data.description | truncate(200) }}</p>
+        <time datetime="{{ post.date | isoDate }}">{{ post.date | longDate }}</time>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

@@ -1,0 +1,56 @@
+---
+layout: base.njk
+title: AppTheory
+---
+<section class="hero wrap">
+  <div class="hero-copy">
+    <p class="eyebrow">Independent iOS Studio</p>
+    <h1>AppTheory</h1>
+    <p class="lede">Small apps, built carefully. And notes from the build.</p>
+    <a class="button" href="/blog/">Read the Blog</a>
+  </div>
+  <div class="hero-media">
+    <img src="/assets/media/hero.jpg" alt="" width="700" height="700" fetchpriority="high">
+  </div>
+</section>
+
+<section class="band band-image" style="--band-img: url('/assets/media/apps-band.jpg')">
+  <div class="wrap">
+    <h2 class="section-label">Apps</h2>
+    <div class="app-feature">
+      <h3 class="app-name">FretNinja</h3>
+      <p class="app-tag">Every way to play a chord</p>
+      <p class="muted">A guitar chord voicing explorer for iPhone. Type any chord and see every playable way to finger it across the neck.</p>
+      <a class="button" href="/apps/fretninja/">View FretNinja</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head">
+    <h2>Latest Updates</h2>
+    <a class="text-link" href="/blog/">All posts &rarr;</a>
+  </div>
+  <div class="card-grid">
+    {%- for post in collections.posts | limit(3) %}
+    <a class="card" href="{{ post.url }}">
+      <h3>{{ post.data.title }}</h3>
+      <p class="muted">{{ post.data.description | truncate(140) }}</p>
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | shortDate }}</time>
+    </a>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="wrap section split">
+  <div>
+    <h2>About</h2>
+    <p class="lede">AppTheory is a one-person iOS studio. The apps are small and focused, built to do one thing properly and then stay out of your way. The blog is the other half — the bugs, the fixes, and what building with AI tooling is actually like.</p>
+  </div>
+  <img class="rounded" src="/assets/media/about.jpg" alt="" width="700" height="306" loading="lazy">
+</section>
+
+<section class="wrap section" id="contact">
+  <h2>Contact</h2>
+  <p class="lede">Questions, bugs, or feature requests: <a href="mailto:{{ site.email }}">{{ site.email }}</a> — replies usually come within a few days.</p>
+</section>

@@ -1,0 +1,14 @@
+{
+  "name": "apptheory-site",
+  "private": true,
+  "description": "apptheory.ai — static site built with Eleventy and hosted on GitHub Pages",
+  "type": "module",
+  "scripts": {
+    "media": "node scripts/fetch-media.mjs",
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.6"
+  }
+}
