@@ -1,0 +1,44 @@
+---
+title: GNeck Privacy Policy
+description: GNeck collects no data. No account, no analytics, no third-party SDKs and no network requests. Your progress stays on your device.
+---
+{%- set email = supportEmail if (supportEmail and not supportEmail.startsWith('[')) else site.email %}
+<article class="gn-wrap gn-narrow gn-doc">
+  <p class="gn-eyebrow"><a href="/apps/gneck/">GNeck</a></p>
+  <h1>Privacy Policy</h1>
+  <p class="gn-meta">Effective date: October 10, 2026 · Applies to GNeck for iPhone and iPad, published by AppTheory</p>
+
+  <h2>The short version</h2>
+  <p>GNeck does not collect, transmit, or store any information about you. There is no account, no analytics, and no network connection of any kind. Your progress lives on your device and nowhere else.</p>
+
+  <h2>What we do not collect</h2>
+  <ul>
+    <li>Names, email addresses, or contact information</li>
+    <li>Account credentials. GNeck has no sign-in and no user accounts</li>
+    <li>Your practice history, progress, tunings, or settings</li>
+    <li>Device identifiers or advertising identifiers</li>
+    <li>Usage analytics, crash reports, or diagnostics</li>
+    <li>Location, contacts, photos, microphone audio, or health data</li>
+    <li>Payment or financial information</li>
+  </ul>
+
+  <h2>No network, no third parties</h2>
+  <p>GNeck makes no network requests. It contains no analytics libraries, no advertising, no crash reporters, and no third-party SDKs. Every sound, shape, and round is generated on your device by the app itself. GNeck works the same in Airplane Mode.</p>
+
+  <h2>Where your data lives</h2>
+  <p>Your progress and settings are stored only on your device, using Apple's standard on-device storage, separately for each tuning. Only GNeck can read them.</p>
+  <p>If you use iCloud Backup, GNeck's data may be included in your device backup. That backup is handled by Apple under Apple's privacy policy, and AppTheory has no access to it.</p>
+  <p>You can erase your progress at any time in Settings → Reset progress, or by deleting the app. Because nothing is stored on a server, deleted progress can't be recovered.</p>
+
+  <h2>Children's privacy</h2>
+  <p>GNeck collects no data from anyone, including children.</p>
+
+  <h2>Your rights</h2>
+  <p>Privacy laws such as the GDPR and CCPA give you rights over your personal data. We hold none of yours. It all stays on your device, under your control. We do not sell or share personal information, because we have none.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If a future version of GNeck changes how it handles data, this page will be updated and the effective date revised before that version ships.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:{{ email }}?subject=GNeck%20privacy">{{ email }}</a></p>
+</article>

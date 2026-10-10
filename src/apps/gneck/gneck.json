@@ -1,0 +1,10 @@
+{
+  "layout": "base.njk",
+  "bodyClass": "gn",
+  "extraCss": ["/css/gneck.css"],
+  "themeColor": "#0E0D0C",
+  "appleTouchIcon": "/assets/gneck/icon-180.png",
+  "ogImage": "/assets/gneck/og.jpg",
+  "appStoreUrl": "[APP_STORE_URL]",
+  "supportEmail": "[SUPPORT_EMAIL]"
+}

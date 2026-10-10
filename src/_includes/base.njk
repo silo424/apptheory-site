@@ -11,15 +11,26 @@
   <meta property="og:description" content="{{ description or site.description }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:type" content="{% if layout == 'post.njk' %}article{% else %}website{% endif %}">
-  <meta name="theme-color" content="#000000">
+  {%- if ogImage %}
+  <meta property="og:image" content="{{ site.url }}{{ ogImage }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ site.url }}{{ ogImage }}">
+  {%- endif %}
+  {%- if appleTouchIcon %}
+  <link rel="apple-touch-icon" href="{{ appleTouchIcon }}">
+  {%- endif %}
+  <meta name="theme-color" content="{{ themeColor or '#000000' }}">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='%238774ff' text-anchor='middle'%3EAT%3C/text%3E%3C/svg%3E">
   <link rel="alternate" type="application/atom+xml" title="{{ site.name }} blog" href="/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  {%- for css in extraCss %}
+  <link rel="stylesheet" href="{{ css }}">
+  {%- endfor %}
 </head>
-<body>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
   <a class="skip" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="wrap header-inner">
@@ -27,7 +38,7 @@
       <nav aria-label="Main">
         <ul>
           {%- for item in site.nav %}
-          <li><a href="{{ item.url }}"{% if page.url == item.url or (item.url != '/' and page.url.startsWith(item.url) and not (item.url == '/apps/' and page.url.startsWith('/apps/fretninja'))) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+          <li><a href="{{ item.url }}"{% if page.url == item.url or (item.url != '/' and page.url.startsWith(item.url) and not (item.url == '/apps/' and (page.url.startsWith('/apps/fretninja') or page.url.startsWith('/apps/gneck')))) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
           {%- endfor %}
         </ul>
       </nav>

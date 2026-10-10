@@ -7,6 +7,7 @@
     { "label": "Home", "url": "/" },
     { "label": "Blog", "url": "/blog/" },
     { "label": "Apps", "url": "/apps/" },
-    { "label": "FretNinja", "url": "/apps/fretninja/" }
+    { "label": "FretNinja", "url": "/apps/fretninja/" },
+    { "label": "GNeck", "url": "/apps/gneck/" }
   ]
 }

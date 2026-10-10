@@ -1,0 +1,41 @@
+---
+title: GNeck Support
+description: Help with GNeck — tunings, left-handed mode, offline use, how progress is saved and how to reset it. Contact AppTheory for anything else.
+---
+{%- set email = supportEmail if (supportEmail and not supportEmail.startsWith('[')) else site.email %}
+<article class="gn-wrap gn-narrow gn-doc">
+  <p class="gn-eyebrow"><a href="/apps/gneck/">GNeck</a></p>
+  <h1>Support</h1>
+  <p class="gn-meta">Questions, bugs, or ideas for GNeck.</p>
+
+  <div class="gn-contact">
+    <p><strong>Email:</strong> <a href="mailto:{{ email }}?subject=GNeck%20support">{{ email }}</a></p>
+    <p class="gn-muted">I read everything and usually reply within a few days. If something isn't working, please include your iPhone or iPad model, iOS version, GNeck version, and the tuning you were using.</p>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <div class="gn-faq">
+    <details>
+      <summary>Which tunings does GNeck support?</summary>
+      <p>Standard (EADGBE), Drop D, Drop C and 7-string. Each tuning keeps its own progress, so switching never mixes them up. Change the tuning from the picker at the top of the Home screen.</p>
+    </details>
+    <details>
+      <summary>Is there a left-handed mode?</summary>
+      <p>Yes. GNeck has left-handed and flipped neck layouts, so the neck on screen matches the guitar in your hands.</p>
+    </details>
+    <details>
+      <summary>Does GNeck need an internet connection?</summary>
+      <p>No. GNeck works completely offline and never connects to the internet.</p>
+    </details>
+    <details>
+      <summary>How is my progress saved?</summary>
+      <p>On your device only, separately for each tuning. There's no account and nothing is stored on a server. If you use iCloud Backup, your progress may be included in your device backup.</p>
+    </details>
+    <details>
+      <summary>How do I reset my progress?</summary>
+      <p>Go to Settings → Reset progress. This can't be undone.</p>
+    </details>
+  </div>
+
+  <p style="margin-top:36px"><a href="/apps/gneck/privacy/">Privacy Policy</a></p>
+</article>
